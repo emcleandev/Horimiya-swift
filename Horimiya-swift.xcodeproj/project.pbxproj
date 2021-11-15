@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023BF9282742F7E5002C7AD1 /* Horimiya_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9272742F7E5002C7AD1 /* Horimiya_swiftApp.swift */; };
+		023BF92A2742F7E5002C7AD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9292742F7E5002C7AD1 /* ContentView.swift */; };
+		023BF92C2742F7E7002C7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023BF92B2742F7E7002C7AD1 /* Assets.xcassets */; };
+		023BF92F2742F7E7002C7AD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023BF92E2742F7E7002C7AD1 /* Preview Assets.xcassets */; };
+		023BF9312742F7E7002C7AD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9302742F7E7002C7AD1 /* Persistence.swift */; };
+		023BF9342742F7E7002C7AD1 /* Horimiya_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9322742F7E7002C7AD1 /* Horimiya_swift.xcdatamodeld */; };
+		023BF93F2742F7E7002C7AD1 /* Horimiya_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF93E2742F7E7002C7AD1 /* Horimiya_swiftTests.swift */; };
+		023BF94A2742F7E7002C7AD1 /* Horimiya_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9492742F7E7002C7AD1 /* Horimiya_swiftUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		023BF93B2742F7E7002C7AD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 023BF91C2742F7E5002C7AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 023BF9232742F7E5002C7AD1;
+			remoteInfo = "Horimiya-swift";
+		};
+		023BF9462742F7E7002C7AD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 023BF91C2742F7E5002C7AD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 023BF9232742F7E5002C7AD1;
+			remoteInfo = "Horimiya-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		023BF9242742F7E5002C7AD1 /* Horimiya-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horimiya-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		023BF9272742F7E5002C7AD1 /* Horimiya_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horimiya_swiftApp.swift; sourceTree = "<group>"; };
+		023BF9292742F7E5002C7AD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		023BF92B2742F7E7002C7AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		023BF92E2742F7E7002C7AD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		023BF9302742F7E7002C7AD1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		023BF9332742F7E7002C7AD1 /* Horimiya_swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Horimiya_swift.xcdatamodel; sourceTree = "<group>"; };
+		023BF9352742F7E7002C7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		023BF93A2742F7E7002C7AD1 /* Horimiya-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Horimiya-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		023BF93E2742F7E7002C7AD1 /* Horimiya_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horimiya_swiftTests.swift; sourceTree = "<group>"; };
+		023BF9402742F7E7002C7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		023BF9452742F7E7002C7AD1 /* Horimiya-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Horimiya-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		023BF9492742F7E7002C7AD1 /* Horimiya_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horimiya_swiftUITests.swift; sourceTree = "<group>"; };
+		023BF94B2742F7E7002C7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		023BF9212742F7E5002C7AD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023BF9372742F7E7002C7AD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023BF9422742F7E7002C7AD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		023BF91B2742F7E5002C7AD1 = {
+			isa = PBXGroup;
+			children = (
+				023BF9262742F7E5002C7AD1 /* Horimiya-swift */,
+				023BF93D2742F7E7002C7AD1 /* Horimiya-swiftTests */,
+				023BF9482742F7E7002C7AD1 /* Horimiya-swiftUITests */,
+				023BF9252742F7E5002C7AD1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		023BF9252742F7E5002C7AD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				023BF9242742F7E5002C7AD1 /* Horimiya-swift.app */,
+				023BF93A2742F7E7002C7AD1 /* Horimiya-swiftTests.xctest */,
+				023BF9452742F7E7002C7AD1 /* Horimiya-swiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		023BF9262742F7E5002C7AD1 /* Horimiya-swift */ = {
+			isa = PBXGroup;
+			children = (
+				023BF9272742F7E5002C7AD1 /* Horimiya_swiftApp.swift */,
+				023BF9292742F7E5002C7AD1 /* ContentView.swift */,
+				023BF92B2742F7E7002C7AD1 /* Assets.xcassets */,
+				023BF9302742F7E7002C7AD1 /* Persistence.swift */,
+				023BF9352742F7E7002C7AD1 /* Info.plist */,
+				023BF9322742F7E7002C7AD1 /* Horimiya_swift.xcdatamodeld */,
+				023BF92D2742F7E7002C7AD1 /* Preview Content */,
+			);
+			path = "Horimiya-swift";
+			sourceTree = "<group>";
+		};
+		023BF92D2742F7E7002C7AD1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				023BF92E2742F7E7002C7AD1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		023BF93D2742F7E7002C7AD1 /* Horimiya-swiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				023BF93E2742F7E7002C7AD1 /* Horimiya_swiftTests.swift */,
+				023BF9402742F7E7002C7AD1 /* Info.plist */,
+			);
+			path = "Horimiya-swiftTests";
+			sourceTree = "<group>";
+		};
+		023BF9482742F7E7002C7AD1 /* Horimiya-swiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				023BF9492742F7E7002C7AD1 /* Horimiya_swiftUITests.swift */,
+				023BF94B2742F7E7002C7AD1 /* Info.plist */,
+			);
+			path = "Horimiya-swiftUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		023BF9232742F7E5002C7AD1 /* Horimiya-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 023BF94E2742F7E7002C7AD1 /* Build configuration list for PBXNativeTarget "Horimiya-swift" */;
+			buildPhases = (
+				023BF9202742F7E5002C7AD1 /* Sources */,
+				023BF9212742F7E5002C7AD1 /* Frameworks */,
+				023BF9222742F7E5002C7AD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Horimiya-swift";
+			productName = "Horimiya-swift";
+			productReference = 023BF9242742F7E5002C7AD1 /* Horimiya-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		023BF9392742F7E7002C7AD1 /* Horimiya-swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 023BF9512742F7E7002C7AD1 /* Build configuration list for PBXNativeTarget "Horimiya-swiftTests" */;
+			buildPhases = (
+				023BF9362742F7E7002C7AD1 /* Sources */,
+				023BF9372742F7E7002C7AD1 /* Frameworks */,
+				023BF9382742F7E7002C7AD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				023BF93C2742F7E7002C7AD1 /* PBXTargetDependency */,
+			);
+			name = "Horimiya-swiftTests";
+			productName = "Horimiya-swiftTests";
+			productReference = 023BF93A2742F7E7002C7AD1 /* Horimiya-swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		023BF9442742F7E7002C7AD1 /* Horimiya-swiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 023BF9542742F7E7002C7AD1 /* Build configuration list for PBXNativeTarget "Horimiya-swiftUITests" */;
+			buildPhases = (
+				023BF9412742F7E7002C7AD1 /* Sources */,
+				023BF9422742F7E7002C7AD1 /* Frameworks */,
+				023BF9432742F7E7002C7AD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				023BF9472742F7E7002C7AD1 /* PBXTargetDependency */,
+			);
+			name = "Horimiya-swiftUITests";
+			productName = "Horimiya-swiftUITests";
+			productReference = 023BF9452742F7E7002C7AD1 /* Horimiya-swiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		023BF91C2742F7E5002C7AD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					023BF9232742F7E5002C7AD1 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					023BF9392742F7E7002C7AD1 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 023BF9232742F7E5002C7AD1;
+					};
+					023BF9442742F7E7002C7AD1 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 023BF9232742F7E5002C7AD1;
+					};
+				};
+			};
+			buildConfigurationList = 023BF91F2742F7E5002C7AD1 /* Build configuration list for PBXProject "Horimiya-swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 023BF91B2742F7E5002C7AD1;
+			productRefGroup = 023BF9252742F7E5002C7AD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				023BF9232742F7E5002C7AD1 /* Horimiya-swift */,
+				023BF9392742F7E7002C7AD1 /* Horimiya-swiftTests */,
+				023BF9442742F7E7002C7AD1 /* Horimiya-swiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		023BF9222742F7E5002C7AD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023BF92F2742F7E7002C7AD1 /* Preview Assets.xcassets in Resources */,
+				023BF92C2742F7E7002C7AD1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023BF9382742F7E7002C7AD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023BF9432742F7E7002C7AD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		023BF9202742F7E5002C7AD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023BF9312742F7E7002C7AD1 /* Persistence.swift in Sources */,
+				023BF9342742F7E7002C7AD1 /* Horimiya_swift.xcdatamodeld in Sources */,
+				023BF92A2742F7E5002C7AD1 /* ContentView.swift in Sources */,
+				023BF9282742F7E5002C7AD1 /* Horimiya_swiftApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023BF9362742F7E7002C7AD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023BF93F2742F7E7002C7AD1 /* Horimiya_swiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023BF9412742F7E7002C7AD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023BF94A2742F7E7002C7AD1 /* Horimiya_swiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		023BF93C2742F7E7002C7AD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 023BF9232742F7E5002C7AD1 /* Horimiya-swift */;
+			targetProxy = 023BF93B2742F7E7002C7AD1 /* PBXContainerItemProxy */;
+		};
+		023BF9472742F7E7002C7AD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 023BF9232742F7E5002C7AD1 /* Horimiya-swift */;
+			targetProxy = 023BF9462742F7E7002C7AD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		023BF94C2742F7E7002C7AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		023BF94D2742F7E7002C7AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		023BF94F2742F7E7002C7AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Horimiya-swift/Preview Content\"";
+				DEVELOPMENT_TEAM = V5ZSLP8RC5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Horimiya-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softbutter.Horimiya-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		023BF9502742F7E7002C7AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Horimiya-swift/Preview Content\"";
+				DEVELOPMENT_TEAM = V5ZSLP8RC5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Horimiya-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softbutter.Horimiya-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		023BF9522742F7E7002C7AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5ZSLP8RC5;
+				INFOPLIST_FILE = "Horimiya-swiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softbutter.Horimiya-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Horimiya-swift.app/Horimiya-swift";
+			};
+			name = Debug;
+		};
+		023BF9532742F7E7002C7AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5ZSLP8RC5;
+				INFOPLIST_FILE = "Horimiya-swiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softbutter.Horimiya-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Horimiya-swift.app/Horimiya-swift";
+			};
+			name = Release;
+		};
+		023BF9552742F7E7002C7AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5ZSLP8RC5;
+				INFOPLIST_FILE = "Horimiya-swiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softbutter.Horimiya-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Horimiya-swift";
+			};
+			name = Debug;
+		};
+		023BF9562742F7E7002C7AD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5ZSLP8RC5;
+				INFOPLIST_FILE = "Horimiya-swiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softbutter.Horimiya-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Horimiya-swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		023BF91F2742F7E5002C7AD1 /* Build configuration list for PBXProject "Horimiya-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023BF94C2742F7E7002C7AD1 /* Debug */,
+				023BF94D2742F7E7002C7AD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		023BF94E2742F7E7002C7AD1 /* Build configuration list for PBXNativeTarget "Horimiya-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023BF94F2742F7E7002C7AD1 /* Debug */,
+				023BF9502742F7E7002C7AD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		023BF9512742F7E7002C7AD1 /* Build configuration list for PBXNativeTarget "Horimiya-swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023BF9522742F7E7002C7AD1 /* Debug */,
+				023BF9532742F7E7002C7AD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		023BF9542742F7E7002C7AD1 /* Build configuration list for PBXNativeTarget "Horimiya-swiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023BF9552742F7E7002C7AD1 /* Debug */,
+				023BF9562742F7E7002C7AD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		023BF9322742F7E7002C7AD1 /* Horimiya_swift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				023BF9332742F7E7002C7AD1 /* Horimiya_swift.xcdatamodel */,
+			);
+			currentVersion = 023BF9332742F7E7002C7AD1 /* Horimiya_swift.xcdatamodel */;
+			path = Horimiya_swift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 023BF91C2742F7E5002C7AD1 /* Project object */;
+}
