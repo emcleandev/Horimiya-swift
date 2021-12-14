@@ -7,32 +7,34 @@
 
 import Foundation
 import Combine
+import CoreData
 
 class HabitPublisher : ObservableObject {
+
     
-    var habitForm : Habit = Habit()
-    @Published var text :String = "hello"
-    
-    func resetHabitForm(){
-        print("clean habit form")
-        self.habitForm = Habit()
-    }
-    
-    func submitCreateHabit() -> Bool{
-        if(habitForm.isValid()){
-            do {
-                try createHabit(newHabit: habitForm)
-                return true;
-            } catch {
-                print("failed to sumbit createHabit()")
-            }
-        }
-        return false
-    }
-    
-    func createHabit(newHabit : Habit) -> Void {
+    private var dataGateway : DataGateway
+
+    @Published private(set) var habits = [Habit]()
+
+    init(){
+        self.dataGateway = DataGateway()
+        
         
     }
+    
+    func loadHabits(moc: NSManagedObjectContext) {
+        self.dataGateway =  DataGateway(for: moc)
+        habits = dataGateway.getHabits()
+        print("Habit Count ", habits.count)
+    }
+    
+    func submitCreateHabit(moc: NSManagedObjectContext, newHabit: Habit) {
+        if(newHabit.isValid()){
+            self.dataGateway =  DataGateway()
+            dataGateway.save(habit: newHabit)
+        }
+    }
+   
     
     
     

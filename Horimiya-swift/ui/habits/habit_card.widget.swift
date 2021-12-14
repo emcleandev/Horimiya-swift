@@ -17,7 +17,7 @@ struct HabitCard: View {
                     .padding(.trailing, 7)
                 Divider()
                 VStack{
-                    Text("Habit name")
+                    Text(habit.title)
                 }
                 .padding(.leading, 7)
                 Spacer()

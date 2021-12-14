@@ -19,9 +19,9 @@ import CoreData
 @available(iOS 15.0, *)
 struct DashboardView: View  {
     
-    @Environment(\.managedObjectContext)
-    private var viewContext
-    @StateObject var habitPub = HabitPublisher()
+    @Environment(\.managedObjectContext) var moc
+    @StateObject var habitPub : HabitPublisher = HabitPublisher()
+   
     var body: some View {
         TabView {
             TodayView()

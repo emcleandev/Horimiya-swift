@@ -9,13 +9,15 @@ import SwiftUI
 import CoreData
 
 @available(iOS 15.0, *)
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
-    
+  //  @StateObject private var dataController = DataController()
+
+
     var body: some View {
         DashboardView()
-        
+
     }
     
     

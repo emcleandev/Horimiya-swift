@@ -20,7 +20,7 @@ enum HabitIcon: String, CorrespondableImage , CaseIterable, Identifiable {
         switch self {
         case .classic: return "circle"
         case .vanilla: return "circle"
-        case .another: return "arrow"
+        case .another: return "circle"
 
         }
     }

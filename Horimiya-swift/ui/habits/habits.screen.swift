@@ -13,14 +13,22 @@ import CoreData
 @available(iOS 15.0, *)
 struct HabbitsView: View {
     @EnvironmentObject var habitPub : HabitPublisher
-
+    @FetchRequest(
+        entity: HabitEntity.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \HabitEntity.title, ascending: true),
+        ]
+    ) var habitEntities: FetchedResults<HabitEntity>
+    
     var body: some View {
         NavigationView() {
             ScrollView(showsIndicators: true) {
                 VStack(spacing: 24) {
-                    HabitCard(habit: Habit())
-                    Text(habitPub.habitForm.title)
-                       
+                    ForEach(habitEntities) { habitEntity in
+                        let habit = Habit(fromEntity: habitEntity)
+                        
+                        HabitCard(habit: habit ?? Habit(title:"oops"))
+                    }
                 }.padding(.top, 8)
                     .padding(.bottom, 24)
             }

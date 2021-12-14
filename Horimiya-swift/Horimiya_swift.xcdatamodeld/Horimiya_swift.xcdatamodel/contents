@@ -6,7 +6,7 @@
         <attribute name="descript" optional="YES" attributeType="String"/>
         <attribute name="iconRef" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="schedule" optional="YES" attributeType="Transformable"/>
+        <attribute name="schedule" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
@@ -14,7 +14,7 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="HabitEntity" positionX="-63" positionY="-9" width="128" height="149"/>
+        <element name="HabitEntity" positionX="-63" positionY="-9" width="128" height="14"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
     </elements>
 </model>

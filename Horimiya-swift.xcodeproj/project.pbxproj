@@ -31,6 +31,9 @@
 		02707A19274BD3DB00D33F07 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02707A18274BD3DB00D33F07 /* constants.swift */; };
 		02707A1C274C0EAE00D33F07 /* habit.bloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02707A1B274C0EAE00D33F07 /* habit.bloc.swift */; };
 		02707A1E274C339200D33F07 /* habit_card.widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02707A1D274C339200D33F07 /* habit_card.widget.swift */; };
+		02D0C13B276001A10042390B /* create_habit.form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13A276001A10042390B /* create_habit.form.swift */; };
+		02D0C13E2767AA520042390B /* datagateway.service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13D2767AA520042390B /* datagateway.service.swift */; };
+		02D0C1402767B97D0042390B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13F2767B97D0042390B /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		02707A18274BD3DB00D33F07 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		02707A1B274C0EAE00D33F07 /* habit.bloc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habit.bloc.swift; sourceTree = "<group>"; };
 		02707A1D274C339200D33F07 /* habit_card.widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habit_card.widget.swift; sourceTree = "<group>"; };
+		02D0C13A276001A10042390B /* create_habit.form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = create_habit.form.swift; sourceTree = "<group>"; };
+		02D0C13D2767AA520042390B /* datagateway.service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datagateway.service.swift; sourceTree = "<group>"; };
+		02D0C13F2767B97D0042390B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 		023BF9262742F7E5002C7AD1 /* Horimiya-swift */ = {
 			isa = PBXGroup;
 			children = (
+				02D0C13C2767AA380042390B /* services */,
 				02707A1A274C0E7200D33F07 /* blocs */,
 				02707A15274BD28B00D33F07 /* constants */,
 				02707A122749710500D33F07 /* extensions */,
@@ -141,6 +148,7 @@
 				023BF978274662B3002C7AD1 /* models */,
 				023BF9592742FEAB002C7AD1 /* ui */,
 				0257ED90274C42910073D3D4 /* Horimiya_swift.xcdatamodeld */,
+				02D0C13F2767B97D0042390B /* DataController.swift */,
 			);
 			path = "Horimiya-swift";
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 				02707A16274BD2AD00D33F07 /* habits.constants.swift */,
 				023BF9792746675A002C7AD1 /* habit.model.swift */,
 				024A5371275524380090167F /* timesOfDay.model.swift */,
+				02D0C13A276001A10042390B /* create_habit.form.swift */,
 			);
 			path = habit;
 			sourceTree = "<group>";
@@ -258,6 +267,14 @@
 				02707A1B274C0EAE00D33F07 /* habit.bloc.swift */,
 			);
 			path = blocs;
+			sourceTree = "<group>";
+		};
+		02D0C13C2767AA380042390B /* services */ = {
+			isa = PBXGroup;
+			children = (
+				02D0C13D2767AA520042390B /* datagateway.service.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,9 +409,11 @@
 				0230C66C274D631D008DD3B7 /* card.layout.swift in Sources */,
 				023BF97127465DAF002C7AD1 /* habits.screen.swift in Sources */,
 				02707A1E274C339200D33F07 /* habit_card.widget.swift in Sources */,
+				02D0C13B276001A10042390B /* create_habit.form.swift in Sources */,
 				023BF9312742F7E7002C7AD1 /* Persistence.swift in Sources */,
 				02707A142749712300D33F07 /* strings.extenstion.swift in Sources */,
 				023BF97527465DBC002C7AD1 /* create_habit.layout.swift in Sources */,
+				02D0C1402767B97D0042390B /* DataController.swift in Sources */,
 				023BF9582742FE93002C7AD1 /* dashboard.layout.swift in Sources */,
 				02707A19274BD3DB00D33F07 /* constants.swift in Sources */,
 				023BF92A2742F7E5002C7AD1 /* ContentView.swift in Sources */,
@@ -407,6 +426,7 @@
 				02707A17274BD2AE00D33F07 /* habits.constants.swift in Sources */,
 				024A5372275524380090167F /* timesOfDay.model.swift in Sources */,
 				0230C668274D2741008DD3B7 /* color.extenstion.swift in Sources */,
+				02D0C13E2767AA520042390B /* datagateway.service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,19 +8,43 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct CreateHabitPage: View {
+struct CreateHabbitView: View {
     @State private var showingPopover = false
     @State private var subNote : String = ""
     @State private var subNoteDay : DayOfTheWeek = DayOfTheWeek.mon;
-    @State var habitPub : HabitPublisher
+    @EnvironmentObject var habitPub : HabitPublisher
+    @State var habitForm : Habit = Habit()
+    @State private var showingFormAlert = false
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var moc
 
+    
     var body: some View {
-        Form {
+        mainContent()
+            .navigationBarTitle("New Habit", displayMode: .inline)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarItems(trailing:
+                                    Button( "Create", action: {
+                if(habitForm.isValid()){
+                    print("create habit")
+                    habitPub.submitCreateHabit(moc : moc,  newHabit: habitForm)
+                    self.presentationMode.wrappedValue.dismiss()
+                    habitPub.loadHabits(moc:moc)
+
+                } else {
+                    showingFormAlert = true;
+                }}).alert("Needs a Title", isPresented: $showingFormAlert) {
+                    Button("Ok", role: .cancel) { }
+                })
+    }
+    
+    func mainContent() -> some View {
+        return Form {
             Section(header: Text("Basic info")) {
-                TextField("Habit Title...", text: $habitPub.habitForm.title)
-                //            }
-                //            Section{
-                Picker(selection: $habitPub.habitForm.icon, label: Text("Appearance")) {
+                TextField("Habit Title...", text: $habitForm.title)
+            }
+            Section{
+                Picker(selection: $habitForm.icon, label: Text("Appearance")) {
                     ForEach(HabitIcon.allCases)  { icon in
                         HStack{
                             Image(systemName: icon.imageName )
@@ -30,21 +54,20 @@ struct CreateHabitPage: View {
                     }
                 }
             }
-            
             Section(header: Text("Description")) {
-                TextEditor( text: $habitPub.habitForm.description)
+                TextEditor( text: $habitForm.description)
                     .textInputAutocapitalization(.none)
             }
-            Section(header: Text("Optional")) {
-                Toggle(isOn: $habitPub.habitForm.checkable) {
-                    Text("Checkable habits")
-                }
-            }
-            
+// MARK: -
+//            Section(header: Text("Optional")) {
+//                Toggle(isOn: $habitForm.checkable) {
+//                    Text("Checkable habits")
+//                }
+//            }
             Section (header: Text("Schedule")){
                 VStack{
                     ForEach(DayOfTheWeek.allCases) {dayInWeek in
-                        let subNote = habitPub.habitForm.schedule[dayInWeek.id]?.note ?? ""
+                        let subNote = habitForm.schedule[dayInWeek.id]?.note ?? ""
                         let ScheduleDayRow: HStack =
                         HStack{
                             Text(dayInWeek.id)
@@ -74,31 +97,31 @@ struct CreateHabitPage: View {
                             Group {
                                 Image(systemName: "tv.fill")
                                     .renderingMode(.template)
-                                    .foregroundColor((habitPub.habitForm.schedule[dayInWeek.id]?.morning ?? false)
+                                    .foregroundColor((habitForm.schedule[dayInWeek.id]?.morning ?? false)
                                                      ? .black  : Color(.lightGray))
                                     .onTapGesture() {
-                                        habitPub.habitForm.schedule[dayInWeek.id]?.toogleMorning();
+                                        habitForm.schedule[dayInWeek.id]?.toogleMorning();
                                     }
                                 Image(systemName: "tv.fill")
                                     .renderingMode(.template)
-                                    .foregroundColor((habitPub.habitForm.schedule[dayInWeek.id]?.noon ?? false)
+                                    .foregroundColor((habitForm.schedule[dayInWeek.id]?.noon ?? false)
                                                      ? .black  : Color(.lightGray))
                                     .onTapGesture() {
-                                        habitPub.habitForm.schedule[dayInWeek.id]?.toogleNoon();
+                                        habitForm.schedule[dayInWeek.id]?.toogleNoon();
                                     }
                                 Image(systemName: "tv.fill")
                                     .renderingMode(.template)
-                                    .foregroundColor((habitPub.habitForm.schedule[dayInWeek.id]?.evening ?? false)
+                                    .foregroundColor((habitForm.schedule[dayInWeek.id]?.evening ?? false)
                                                      ? .black  : Color(.lightGray))
                                     .onTapGesture() {
-                                        habitPub.habitForm.schedule[dayInWeek.id]?.toogleEvening();
+                                        habitForm.schedule[dayInWeek.id]?.toogleEvening();
                                     }
                                 Image(systemName: "tv.fill")
                                     .renderingMode(.template)
-                                    .foregroundColor((habitPub.habitForm.schedule[dayInWeek.id]?.night ?? false)
+                                    .foregroundColor((habitForm.schedule[dayInWeek.id]?.night ?? false)
                                                      ? .black  : Color(.lightGray))
                                     .onTapGesture() {
-                                        habitPub.habitForm.schedule[dayInWeek.id]?.toogleNight();
+                                        habitForm.schedule[dayInWeek.id]?.toogleNight();
                                     }
                             }
                         }
@@ -112,7 +135,7 @@ struct CreateHabitPage: View {
                         .textInputAutocapitalization(.none)
                         .multilineTextAlignment(.center)
                         .onSubmit({
-                            habitPub.habitForm.schedule[subNoteDay.id]?.note = subNote;
+                            habitForm.schedule[subNoteDay.id]?.note = subNote;
                             showingPopover = false;
                         })
                         .padding()
@@ -120,7 +143,7 @@ struct CreateHabitPage: View {
                 HStack{
                     Spacer()
                     Button("Save"){
-                        habitPub.habitForm.schedule[subNoteDay.id]?.note = subNote;
+                        habitForm.schedule[subNoteDay.id]?.note = subNote;
                         showingPopover = false;
                     }
                     .contentShape(Rectangle())
@@ -133,7 +156,7 @@ struct CreateHabitPage: View {
                     Button("Undo", role: .destructive){
                         print("Doing undo")
                         subNote = ""
-                        habitPub.habitForm.schedule[subNoteDay.id]?.note = subNote;
+                        habitForm.schedule[subNoteDay.id]?.note = subNote;
                         showingPopover = false;
                     }
                     .contentShape(Rectangle())
@@ -144,14 +167,12 @@ struct CreateHabitPage: View {
                 
             }
             .onAppear {
-                subNote = habitPub.habitForm.schedule[subNoteDay.id]?.note ?? ""
+                subNote = habitForm.schedule[subNoteDay.id]?.note ?? ""
             }
             .onDisappear {
                 subNote = ""
             }
         }
     }
+    
 }
-
-
-

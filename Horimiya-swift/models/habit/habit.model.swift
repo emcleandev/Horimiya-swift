@@ -40,9 +40,9 @@ struct Habit: Identifiable {
         return true;
     }
     
-    mutating func scheduleFromJson(json: Data){
+    mutating func scheduleFromData(data: Data){
         do{
-            let jsonObj = try JSONSerialization.jsonObject(with: json, options: [])
+            let jsonObj = try JSONSerialization.jsonObject(with: data, options: [])
             if let dict = jsonObj as? [String:Any] {
                 /// print(dict);
                 dict.forEach { (key: String, value: Any) in
@@ -52,6 +52,20 @@ struct Habit: Identifiable {
                     }
                 }
             }
+        }catch{}
+    }
+    mutating func scheduleFromJson(json: [String:Any]){
+        do{
+            let dict = json
+          
+                /// print(dict);
+                dict.forEach { (key: String, value: Any) in
+                    if let nestedDict = value as? [String:Any] {
+                    //    nestedDict["morning"] = true
+                        self.schedule[key]?.fromDict(dict: nestedDict)
+                    }
+                }
+            
         }catch{}
     }
     func scheduleToJson() -> Data {
@@ -66,36 +80,53 @@ struct Habit: Identifiable {
         return json
     }
     init?(fromEntity entity: HabitEntity) {
-        guard let identifier = entity.identifier else { return nil }
-        guard let title = entity.title else { return nil }
-        guard let descript = entity.descript else { return nil }
-        guard let schedule = entity.schedule else { return nil }
-        guard let createdAt = entity.createdAt else {return nil}
-        guard let updatedAt = entity.updatedAt else {return nil}
+
+        guard let identifier = entity.identifier else {
+            print("error reading indentifier of ", entity.identifier?.uuidString ?? "" )
+            return nil }
+        guard let title = entity.title else {
+            print("error reading title of ", identifier.uuidString )
+            return nil }
+        guard let descript = entity.descript else {
+            print("error reading descript of ", identifier.uuidString )
+            return nil }
+        guard let schedule = entity.schedule else {
+            print("error reading schedule of ", identifier.uuidString )
+            return nil }
+//        guard let createdAt = entity.createdAt else {
+//            print("error reading createdAt of ", identifier.uuidString )
+//
+//            return nil}
+//        guard let updatedAt = entity.updatedAt else {
+//            print("error reading updatedAt of ", identifier.uuidString )
+//
+//            return nil}
         let checkable = entity.checkable
-        
         self.id = identifier.uuidString
         self.title = title
         self.description = descript
         self.checkable = checkable
-        self.updatedAt = updatedAt
-        self.createdAt = createdAt
+//        self.updatedAt = updatedAt
+//        self.createdAt = createdAt
         if let iconRef = entity.iconRef {
             self.icon = HabitIcon(rawValue: iconRef) ?? .classic
         } else {
             self.icon = .classic
         }
         do {
-            let jsonData =  try JSONSerialization.data(withJSONObject: schedule, options: .prettyPrinted)
-            scheduleFromJson(json: jsonData as Data)
-        } catch{}
+            if let jsonData  =  try JSONSerialization.jsonObject(with: schedule as! Data, options: []) as? [String:AnyObject]{
+           scheduleFromJson(json: jsonData )
+            }
+        } catch{
+            print("error")
+        }
         
         
         
     }
     
     @discardableResult
-    func toEntity(context: NSManagedObjectContext) -> HabitEntity {
+    func getEntity(context: NSManagedObjectContext) -> HabitEntity {
         let entity = HabitEntity(context: context)
         entity.identifier = UUID.init(uuidString: id)
         entity.title = title
