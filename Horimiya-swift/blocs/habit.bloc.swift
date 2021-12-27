@@ -34,6 +34,12 @@ class HabitPublisher : ObservableObject {
             dataGateway.save(habit: newHabit)
         }
     }
+    func submitEditHabit(moc: NSManagedObjectContext, updatedHabit: Habit) {
+        if(updatedHabit.isValid()){
+            self.dataGateway =  DataGateway()
+            dataGateway.save(habit: updatedHabit)
+        }
+    }
    
     
     

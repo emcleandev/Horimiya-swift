@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021F6C70276F2A54001ACE37 /* habit_edit.screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6C6F276F2A54001ACE37 /* habit_edit.screen.swift */; };
 		022EAED6274C440E008BC124 /* Horimiya_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0257ED90274C42910073D3D4 /* Horimiya_swift.xcdatamodeld */; };
 		022EAED7274C4416008BC124 /* Horimiya_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0257ED90274C42910073D3D4 /* Horimiya_swift.xcdatamodeld */; };
 		0230C668274D2741008DD3B7 /* color.extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0230C667274D2741008DD3B7 /* color.extenstion.swift */; };
@@ -21,11 +22,11 @@
 		023BF9582742FE93002C7AD1 /* dashboard.layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9572742FE93002C7AD1 /* dashboard.layout.swift */; };
 		023BF96D27453419002C7AD1 /* subpage.layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF96C27453419002C7AD1 /* subpage.layout.swift */; };
 		023BF97127465DAF002C7AD1 /* habits.screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF97027465DAF002C7AD1 /* habits.screen.swift */; };
-		023BF97527465DBC002C7AD1 /* create_habit.layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF97427465DBC002C7AD1 /* create_habit.layout.swift */; };
 		023BF9772746625F002C7AD1 /* create_habit.screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9762746625F002C7AD1 /* create_habit.screen.swift */; };
 		023BF97A2746675A002C7AD1 /* habit.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9792746675A002C7AD1 /* habit.model.swift */; };
 		024A5372275524380090167F /* timesOfDay.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024A5371275524380090167F /* timesOfDay.model.swift */; };
 		0257ED92274C42910073D3D4 /* Horimiya_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0257ED90274C42910073D3D4 /* Horimiya_swift.xcdatamodeld */; };
+		0266FBD4276D12B00020A529 /* habit_profile.screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0266FBD3276D12B00020A529 /* habit_profile.screen.swift */; };
 		02707A142749712300D33F07 /* strings.extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02707A132749712300D33F07 /* strings.extenstion.swift */; };
 		02707A17274BD2AE00D33F07 /* habits.constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02707A16274BD2AD00D33F07 /* habits.constants.swift */; };
 		02707A19274BD3DB00D33F07 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02707A18274BD3DB00D33F07 /* constants.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021F6C6F276F2A54001ACE37 /* habit_edit.screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habit_edit.screen.swift; sourceTree = "<group>"; };
 		0230C667274D2741008DD3B7 /* color.extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.extenstion.swift; sourceTree = "<group>"; };
 		0230C66B274D631D008DD3B7 /* card.layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = card.layout.swift; sourceTree = "<group>"; };
 		023BF9242742F7E5002C7AD1 /* Horimiya-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horimiya-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,11 +74,11 @@
 		023BF9572742FE93002C7AD1 /* dashboard.layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboard.layout.swift; sourceTree = "<group>"; };
 		023BF96C27453419002C7AD1 /* subpage.layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subpage.layout.swift; sourceTree = "<group>"; };
 		023BF97027465DAF002C7AD1 /* habits.screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = habits.screen.swift; sourceTree = "<group>"; };
-		023BF97427465DBC002C7AD1 /* create_habit.layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = create_habit.layout.swift; sourceTree = "<group>"; };
 		023BF9762746625F002C7AD1 /* create_habit.screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = create_habit.screen.swift; sourceTree = "<group>"; };
 		023BF9792746675A002C7AD1 /* habit.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habit.model.swift; sourceTree = "<group>"; };
 		024A5371275524380090167F /* timesOfDay.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timesOfDay.model.swift; sourceTree = "<group>"; };
 		0257ED91274C42910073D3D4 /* Horimiya_swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Horimiya_swift.xcdatamodel; sourceTree = "<group>"; };
+		0266FBD3276D12B00020A529 /* habit_profile.screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habit_profile.screen.swift; sourceTree = "<group>"; };
 		02707A132749712300D33F07 /* strings.extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strings.extenstion.swift; sourceTree = "<group>"; };
 		02707A16274BD2AD00D33F07 /* habits.constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habits.constants.swift; sourceTree = "<group>"; };
 		02707A18274BD3DB00D33F07 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
@@ -212,8 +214,9 @@
 			children = (
 				023BF97027465DAF002C7AD1 /* habits.screen.swift */,
 				02707A1D274C339200D33F07 /* habit_card.widget.swift */,
-				023BF97427465DBC002C7AD1 /* create_habit.layout.swift */,
 				023BF9762746625F002C7AD1 /* create_habit.screen.swift */,
+				0266FBD3276D12B00020A529 /* habit_profile.screen.swift */,
+				021F6C6F276F2A54001ACE37 /* habit_edit.screen.swift */,
 			);
 			path = habits;
 			sourceTree = "<group>";
@@ -412,11 +415,12 @@
 				02D0C13B276001A10042390B /* create_habit.form.swift in Sources */,
 				023BF9312742F7E7002C7AD1 /* Persistence.swift in Sources */,
 				02707A142749712300D33F07 /* strings.extenstion.swift in Sources */,
-				023BF97527465DBC002C7AD1 /* create_habit.layout.swift in Sources */,
 				02D0C1402767B97D0042390B /* DataController.swift in Sources */,
+				021F6C70276F2A54001ACE37 /* habit_edit.screen.swift in Sources */,
 				023BF9582742FE93002C7AD1 /* dashboard.layout.swift in Sources */,
 				02707A19274BD3DB00D33F07 /* constants.swift in Sources */,
 				023BF92A2742F7E5002C7AD1 /* ContentView.swift in Sources */,
+				0266FBD4276D12B00020A529 /* habit_profile.screen.swift in Sources */,
 				023BF96D27453419002C7AD1 /* subpage.layout.swift in Sources */,
 				02707A1C274C0EAE00D33F07 /* habit.bloc.swift in Sources */,
 				023BF97A2746675A002C7AD1 /* habit.model.swift in Sources */,

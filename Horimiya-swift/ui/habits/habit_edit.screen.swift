@@ -1,4 +1,12 @@
 //
+//  habit_edit.screen.swift
+//  Horimiya-swift
+//
+//  Created by Emmanuel Mclean on 19/12/2021.
+//
+
+import Foundation
+//
 //  create_habit.page1.screen.swift
 //  Horimiya-swift
 //
@@ -8,26 +16,26 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct CreateHabbitView: View {
+struct EditHabitView: View {
     @State private var showingPopover = false
     @State private var subNote : String = ""
     @State private var subNoteDay : DayOfTheWeek = DayOfTheWeek.mon;
     @EnvironmentObject var habitPub : HabitPublisher
-    @State var habitForm : Habit = Habit()
+    @State var habitForm : Habit
+
     @State private var showingFormAlert = false
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
 
-    
+   
     var body: some View {
         mainContent()
-            .navigationBarTitle("New Habit", displayMode: .inline)
+            .navigationBarTitle("Edit \(habitForm.title.capitalizingFirstLetter())", displayMode: .inline)
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarItems(trailing:
-                                    Button( "Create", action: {
+                                    Button( "Save", action: {
                 if(habitForm.isValid()){
-                    print("create habit")
-                    habitPub.submitCreateHabit(moc : moc,  newHabit: habitForm)
+                    habitPub.submitEditHabit(moc : moc,  updatedHabit: habitForm)
                     self.presentationMode.wrappedValue.dismiss()
                     habitPub.loadHabits(moc:moc)
 

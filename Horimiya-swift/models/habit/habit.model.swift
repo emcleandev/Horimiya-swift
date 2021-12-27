@@ -12,15 +12,13 @@ import SwiftUI
 /// The model for an Habit .
 struct Habit: Identifiable {
     
-    let id: String
+    var id: String
     var title: String  = ""
     var description : String
     var icon : HabitIcon
     var checkable : Bool
     var schedule : [String:TimesOfDay] = ["mon" : TimesOfDay(), "tue" : TimesOfDay(), "wed" : TimesOfDay(), "thu" : TimesOfDay(), "fri" : TimesOfDay(), "sat" : TimesOfDay(), "sun" : TimesOfDay() ]
-    private(set) var updatedAt : Date?
-    private(set) var createdAt : Date?
-    
+
     /// Creates an instance of a Habit.
     /// - Parameters:
     ///   - id: The unique identifier for the instance. By default, this is set to a generated UUID.
@@ -55,7 +53,7 @@ struct Habit: Identifiable {
         }catch{}
     }
     mutating func scheduleFromJson(json: [String:Any]){
-        do{
+        
             let dict = json
           
                 /// print(dict);
@@ -66,7 +64,7 @@ struct Habit: Identifiable {
                     }
                 }
             
-        }catch{}
+       
     }
     func scheduleToJson() -> Data {
         var json = Data.init()
@@ -75,12 +73,11 @@ struct Habit: Identifiable {
             let jsonData = try jsonEncoder.encode(self.schedule)
             let jsonString = String(data: jsonData, encoding: .utf8)
             json = jsonData
-            print("jsontest01 schedule: ", jsonString!)
+           // print("jsontest01 schedule: ", jsonString!)
         }catch{}
         return json
     }
     init?(fromEntity entity: HabitEntity) {
-
         guard let identifier = entity.identifier else {
             print("error reading indentifier of ", entity.identifier?.uuidString ?? "" )
             return nil }
@@ -93,21 +90,12 @@ struct Habit: Identifiable {
         guard let schedule = entity.schedule else {
             print("error reading schedule of ", identifier.uuidString )
             return nil }
-//        guard let createdAt = entity.createdAt else {
-//            print("error reading createdAt of ", identifier.uuidString )
-//
-//            return nil}
-//        guard let updatedAt = entity.updatedAt else {
-//            print("error reading updatedAt of ", identifier.uuidString )
-//
-//            return nil}
+
         let checkable = entity.checkable
-        self.id = identifier.uuidString
+        self.id = identifier
         self.title = title
         self.description = descript
         self.checkable = checkable
-//        self.updatedAt = updatedAt
-//        self.createdAt = createdAt
         if let iconRef = entity.iconRef {
             self.icon = HabitIcon(rawValue: iconRef) ?? .classic
         } else {
@@ -128,16 +116,24 @@ struct Habit: Identifiable {
     @discardableResult
     func getEntity(context: NSManagedObjectContext) -> HabitEntity {
         let entity = HabitEntity(context: context)
-        entity.identifier = UUID.init(uuidString: id)
+        entity.identifier = id
         entity.title = title
         entity.iconRef = icon.rawValue
         entity.descript = description
         entity.checkable = checkable
         entity.schedule =  NSData.init(data: self.scheduleToJson())
-        //meta data
-        entity.createdAt = createdAt
-        entity.updatedAt = updatedAt
+   
         return entity
+    }
+    
+    mutating func copy(habit: Habit) {
+        self.id = habit.id
+        self.title = habit.title
+        self.description = habit.description
+        self.checkable = habit.checkable
+        self.icon = habit.icon
+        self.scheduleFromData(data: habit.scheduleToJson())
+        print(self.title, "test0")
     }
     
     

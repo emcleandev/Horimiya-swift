@@ -7,12 +7,20 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct HabitCard: View {
     @State var habit : Habit
     var body: some View {
+        NavigationLink(destination: HabitProfileView(habit : habit)) {
+            mainContent
+            
+        }.foregroundColor(Color.primary)
+    }
+    
+    var mainContent : some View {
         Card{
             HStack{
-                Image(systemName: habit.icon.imageName ?? "circle")
+                Image(systemName: habit.icon.imageName )
                     .padding(.leading, 15)
                     .padding(.trailing, 7)
                 Divider()
@@ -26,6 +34,7 @@ struct HabitCard: View {
             }
         }
     }
+    
 }
 
 struct ExDivider: View {
@@ -39,6 +48,7 @@ struct ExDivider: View {
     }
 }
 
+@available(iOS 15.0, *)
 struct HabitCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {

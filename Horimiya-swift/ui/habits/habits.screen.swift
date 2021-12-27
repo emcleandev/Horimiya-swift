@@ -37,7 +37,8 @@ struct HabbitsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .principal, content: {Text("Habits")})
-                ToolbarItem(placement: .navigationBarTrailing, content: {NavigationLink(destination: CreateHabbitView()) {
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    NavigationLink(destination: CreateHabbitView()) {
                     Image(systemName: "plus")
                 }})
             })

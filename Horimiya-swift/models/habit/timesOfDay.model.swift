@@ -42,6 +42,7 @@ struct TimesOfDay : Codable{
             self.noon =  times.noon
             self.evening =  times.evening
             self.night =  times.night
+            self.note = times.note
         } catch {}
     }
     mutating func fromDict(dict : [String:Any]){
@@ -66,14 +67,7 @@ struct TimesOfDay : Codable{
     }
     
     
-    func toStringData() -> String {
-        var data = ""
-        data += morning ? "o" : "-"
-        data += noon ? "o" : "-"
-        data += evening ? "o" : "-"
-        data += night ? "o" : "-"
-        return data;
-    }
+   
 
     init( morning : Bool = false, noon : Bool = false, evening : Bool = false, night : Bool = false, note : String = "") {
         
