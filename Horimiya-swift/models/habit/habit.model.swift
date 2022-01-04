@@ -92,7 +92,7 @@ struct Habit: Identifiable {
             return nil }
 
         let checkable = entity.checkable
-        self.id = identifier
+        self.id = identifier.uuidString
         self.title = title
         self.description = descript
         self.checkable = checkable
@@ -116,7 +116,8 @@ struct Habit: Identifiable {
     @discardableResult
     func getEntity(context: NSManagedObjectContext) -> HabitEntity {
         let entity = HabitEntity(context: context)
-        entity.identifier = id
+        //! a wasted line with identifiers
+        entity.identifier = UUID.init(uuidString: id)
         entity.title = title
         entity.iconRef = icon.rawValue
         entity.descript = description

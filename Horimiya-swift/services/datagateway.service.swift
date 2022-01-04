@@ -39,7 +39,6 @@ extension DataGateway {
     func save(habit: Habit) {
         habit.getEntity(context: managedObjectContext)
         do {
-            if
             try managedObjectContext.save()
         } catch {
             print(error.localizedDescription)
