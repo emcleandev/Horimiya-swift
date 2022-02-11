@@ -37,9 +37,25 @@ extension DataGateway {
     
 
     func save(habit: Habit) {
-        habit.getEntity(context: managedObjectContext)
+        let request = NSFetchRequest<HabitEntity>(entityName: "HabitEntity")
+        request.predicate = NSPredicate(format: "identifier == %@", habit.id as CVarArg)
+        print("test1 start")
+
         do {
-            try managedObjectContext.save()
+            let habitEntities = try managedObjectContext.fetch(request)
+            
+            if let habitEntity = habitEntities.first {
+                print("test1 found one to update")
+                habitEntity.title = habit.title
+                habitEntity.iconRef = habit.icon.rawValue
+                habitEntity.descript = habit.description
+                habitEntity.checkable = habit.checkable
+                habitEntity.schedule =  NSData.init(data: habit.scheduleToJson())
+            } else {
+                print("test1 creating new one")
+                habit.getEntity(context: managedObjectContext)
+            }
+
         } catch {
             print(error.localizedDescription)
         }
@@ -73,7 +89,7 @@ extension DataGateway {
  
     func edit(habit: Habit, set value: Any?, forKey key: String) {
         let request = NSFetchRequest<HabitEntity>(entityName: "HabitEntity")
-        request.predicate = NSPredicate(format: "identifier == %@", habit.id)
+        request.predicate = NSPredicate(format: "identifier == %@", habit.id as CVarArg)
         
         do {
             let habitEntities = try managedObjectContext.fetch(request)
@@ -95,7 +111,7 @@ extension DataGateway {
     
     func delete(habit: Habit) {
         let request = NSFetchRequest<HabitEntity>(entityName: "HabitEntity")
-        request.predicate = NSPredicate(format: "identifier == %@", habit.id)
+        request.predicate = NSPredicate(format: "identifier == %@", habit.id as CVarArg)
         
         do {
             let habitEntities = try managedObjectContext.fetch(request)

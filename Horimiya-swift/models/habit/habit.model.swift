@@ -12,7 +12,7 @@ import SwiftUI
 /// The model for an Habit .
 struct Habit: Identifiable {
     
-    var id: String
+    var id: UUID
     var title: String  = ""
     var description : String
     var icon : HabitIcon
@@ -22,7 +22,7 @@ struct Habit: Identifiable {
     /// Creates an instance of a Habit.
     /// - Parameters:
     ///   - id: The unique identifier for the instance. By default, this is set to a generated UUID.
-    init(id: String = UUID().uuidString, title: String = "",description: String = "", icon: HabitIcon =  HabitIcon.classic, checkable: Bool = false, schedule:[String:TimesOfDay]? = nil) {
+    init(id: UUID = UUID(), title: String = "",description: String = "", icon: HabitIcon =  HabitIcon.classic, checkable: Bool = false, schedule:[String:TimesOfDay]? = nil) {
         self.id = id;
         self.title = title;
         self.icon  = icon;
@@ -71,9 +71,9 @@ struct Habit: Identifiable {
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(self.schedule)
-            let jsonString = String(data: jsonData, encoding: .utf8)
+            /// let jsonString = String(data: jsonData, encoding: .utf8)
             json = jsonData
-           // print("jsontest01 schedule: ", jsonString!)
+           /// print("jsontest01 schedule: ", jsonString!)
         }catch{}
         return json
     }
@@ -91,8 +91,9 @@ struct Habit: Identifiable {
             print("error reading schedule of ", identifier.uuidString )
             return nil }
 
+        
         let checkable = entity.checkable
-        self.id = identifier.uuidString
+        self.id = entity.identifier!
         self.title = title
         self.description = descript
         self.checkable = checkable
@@ -117,13 +118,13 @@ struct Habit: Identifiable {
     func getEntity(context: NSManagedObjectContext) -> HabitEntity {
         let entity = HabitEntity(context: context)
         //! a wasted line with identifiers
-        entity.identifier = UUID.init(uuidString: id)
+        entity.identifier = self.id
         entity.title = title
         entity.iconRef = icon.rawValue
         entity.descript = description
         entity.checkable = checkable
         entity.schedule =  NSData.init(data: self.scheduleToJson())
-   
+
         return entity
     }
     

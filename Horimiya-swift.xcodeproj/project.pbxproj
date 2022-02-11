@@ -15,7 +15,6 @@
 		023BF9282742F7E5002C7AD1 /* Horimiya_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9272742F7E5002C7AD1 /* Horimiya_swiftApp.swift */; };
 		023BF92A2742F7E5002C7AD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9292742F7E5002C7AD1 /* ContentView.swift */; };
 		023BF92C2742F7E7002C7AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023BF92B2742F7E7002C7AD1 /* Assets.xcassets */; };
-		023BF92F2742F7E7002C7AD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023BF92E2742F7E7002C7AD1 /* Preview Assets.xcassets */; };
 		023BF9312742F7E7002C7AD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9302742F7E7002C7AD1 /* Persistence.swift */; };
 		023BF93F2742F7E7002C7AD1 /* Horimiya_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF93E2742F7E7002C7AD1 /* Horimiya_swiftTests.swift */; };
 		023BF94A2742F7E7002C7AD1 /* Horimiya_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BF9492742F7E7002C7AD1 /* Horimiya_swiftUITests.swift */; };
@@ -35,7 +34,9 @@
 		02BAEC6A2780C35800FBD5D6 /* ThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BAEC692780C35700FBD5D6 /* ThemeColors.xcassets */; };
 		02D0C13B276001A10042390B /* create_habit.form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13A276001A10042390B /* create_habit.form.swift */; };
 		02D0C13E2767AA520042390B /* datagateway.service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13D2767AA520042390B /* datagateway.service.swift */; };
-		02D0C1402767B97D0042390B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13F2767B97D0042390B /* DataController.swift */; };
+		02D0C1402767B97D0042390B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0C13F2767B97D0042390B /* CoreDataManager.swift */; };
+		02F22EED27B6B1A200EA33AA /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 02F22EEC27B6B1A200EA33AA /* Preview Content */; };
+		02F22EEF27B6CF5D00EA33AA /* habit.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F22EEE27B6CF5D00EA33AA /* habit.model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,6 @@
 		023BF9272742F7E5002C7AD1 /* Horimiya_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horimiya_swiftApp.swift; sourceTree = "<group>"; };
 		023BF9292742F7E5002C7AD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		023BF92B2742F7E7002C7AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		023BF92E2742F7E7002C7AD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		023BF9302742F7E7002C7AD1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		023BF9352742F7E7002C7AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023BF93A2742F7E7002C7AD1 /* Horimiya-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Horimiya-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +88,9 @@
 		02BAEC692780C35700FBD5D6 /* ThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemeColors.xcassets; sourceTree = "<group>"; };
 		02D0C13A276001A10042390B /* create_habit.form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = create_habit.form.swift; sourceTree = "<group>"; };
 		02D0C13D2767AA520042390B /* datagateway.service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datagateway.service.swift; sourceTree = "<group>"; };
-		02D0C13F2767B97D0042390B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		02D0C13F2767B97D0042390B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		02F22EEC27B6B1A200EA33AA /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+		02F22EEE27B6CF5D00EA33AA /* habit.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habit.model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		023BF9262742F7E5002C7AD1 /* Horimiya-swift */ = {
 			isa = PBXGroup;
 			children = (
+				02F22EEC27B6B1A200EA33AA /* Preview Content */,
 				02D0C13C2767AA380042390B /* services */,
 				02707A1A274C0E7200D33F07 /* blocs */,
 				02707A15274BD28B00D33F07 /* constants */,
@@ -149,21 +152,12 @@
 				02BAEC692780C35700FBD5D6 /* ThemeColors.xcassets */,
 				023BF9302742F7E7002C7AD1 /* Persistence.swift */,
 				023BF9352742F7E7002C7AD1 /* Info.plist */,
-				023BF92D2742F7E7002C7AD1 /* Preview Content */,
 				023BF978274662B3002C7AD1 /* models */,
 				023BF9592742FEAB002C7AD1 /* ui */,
 				0257ED90274C42910073D3D4 /* Horimiya_swift.xcdatamodeld */,
-				02D0C13F2767B97D0042390B /* DataController.swift */,
+				02D0C13F2767B97D0042390B /* CoreDataManager.swift */,
 			);
 			path = "Horimiya-swift";
-			sourceTree = "<group>";
-		};
-		023BF92D2742F7E7002C7AD1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				023BF92E2742F7E7002C7AD1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		023BF93D2742F7E7002C7AD1 /* Horimiya-swiftTests */ = {
@@ -235,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				024A53702755240F0090167F /* habit */,
+				02F22EEE27B6CF5D00EA33AA /* habit.model.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -386,8 +381,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F22EED27B6B1A200EA33AA /* Preview Content in Resources */,
 				02BAEC6A2780C35800FBD5D6 /* ThemeColors.xcassets in Resources */,
-				023BF92F2742F7E7002C7AD1 /* Preview Assets.xcassets in Resources */,
 				023BF92C2742F7E7002C7AD1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +414,7 @@
 				02D0C13B276001A10042390B /* create_habit.form.swift in Sources */,
 				023BF9312742F7E7002C7AD1 /* Persistence.swift in Sources */,
 				02707A142749712300D33F07 /* strings.extenstion.swift in Sources */,
-				02D0C1402767B97D0042390B /* DataController.swift in Sources */,
+				02D0C1402767B97D0042390B /* CoreDataManager.swift in Sources */,
 				021F6C70276F2A54001ACE37 /* habit_edit.screen.swift in Sources */,
 				023BF9582742FE93002C7AD1 /* dashboard.layout.swift in Sources */,
 				02707A19274BD3DB00D33F07 /* constants.swift in Sources */,
@@ -428,6 +423,7 @@
 				023BF96D27453419002C7AD1 /* subpage.layout.swift in Sources */,
 				02707A1C274C0EAE00D33F07 /* habit.bloc.swift in Sources */,
 				023BF97A2746675A002C7AD1 /* habit.model.swift in Sources */,
+				02F22EEF27B6CF5D00EA33AA /* habit.model.swift in Sources */,
 				023BF9772746625F002C7AD1 /* create_habit.screen.swift in Sources */,
 				0257ED92274C42910073D3D4 /* Horimiya_swift.xcdatamodeld in Sources */,
 				023BF9282742F7E5002C7AD1 /* Horimiya_swiftApp.swift in Sources */,
