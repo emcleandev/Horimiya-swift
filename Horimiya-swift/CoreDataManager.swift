@@ -16,7 +16,7 @@ class CoreDataManager {
         return persistentContainer.viewContext
     }
     private init() {
-        persistentContainer = NSPersistentContainer(name: "Horimiya")
+        persistentContainer = NSPersistentContainer(name: "Horimiya_swift")
         persistentContainer.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Unable to initialize Core Data Stack \(error)")

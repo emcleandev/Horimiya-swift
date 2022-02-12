@@ -14,6 +14,7 @@ struct CreateHabbitView: View {
     @State private var subNoteDay : DayOfTheWeek = DayOfTheWeek.mon;
     @EnvironmentObject var habitPub : HabitPublisher
     @State var habitForm : Habit = Habit()
+    @StateObject private var habitVM = HabitViewModel(habit: <#HabitEntity?#>)
     @State private var showingFormAlert = false
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
