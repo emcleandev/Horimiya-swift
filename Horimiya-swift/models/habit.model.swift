@@ -8,19 +8,10 @@
 import Foundation
 import CoreData
 
-class HabitViewModel : ObservableObject {
+struct HabitViewModel {
     
     let habit: HabitEntity
-    var scheduleStored :[String: TimesOfDay] {
-        set{
-        }
-        get{
-            return schedule
-        }
-    }
-    init(habit : HabitEntity = HabitEntity(context: CoreDataManager.shared.viewContext) ){
-        self.habit = habit
-    }
+    
     var id: NSManagedObjectID {
         return habit.objectID
     }
@@ -46,19 +37,14 @@ class HabitViewModel : ObservableObject {
     }
     
     var schedule : [String :TimesOfDay] {
-        get {  do {
+        do {
             if let jsonData  =  try JSONSerialization.jsonObject(with: habit.schedule as! Data, options: []) as? [String:AnyObject]{
-                scheduleStored = scheduleFromJson(json: jsonData )
+                return scheduleFromJson(json: jsonData )
             }
         } catch{
         print("error reading schedule")
         }
-        scheduleStored = defaultSchedule
-        return scheduleStored
-        }
-        set {
-            
-        }
+        return defaultSchedule
 
     }
     
@@ -74,20 +60,8 @@ class HabitViewModel : ObservableObject {
             }
         }
         return schedule
+        
     }
-    
-    func scheduleToJson() -> Data {
-        var json = Data.init()
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(self.scheduleStored)
-            /// let jsonString = String(data: jsonData, encoding: .utf8)
-            json = jsonData
-           /// print("jsontest01 schedule: ", jsonString!)
-        }catch{}
-        return json
-    }
-    
     let defaultSchedule :  [String:TimesOfDay] = ["mon" : TimesOfDay(), "tue" : TimesOfDay(), "wed" : TimesOfDay(), "thu" : TimesOfDay(), "fri" : TimesOfDay(), "sat" : TimesOfDay(), "sun" : TimesOfDay() ]
     
     

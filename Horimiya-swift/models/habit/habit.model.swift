@@ -18,7 +18,7 @@ struct Habit: Identifiable {
     var icon : HabitIcon
     var checkable : Bool
     var schedule : [String:TimesOfDay] = ["mon" : TimesOfDay(), "tue" : TimesOfDay(), "wed" : TimesOfDay(), "thu" : TimesOfDay(), "fri" : TimesOfDay(), "sat" : TimesOfDay(), "sun" : TimesOfDay() ]
-    
+
     /// Creates an instance of a Habit.
     /// - Parameters:
     ///   - id: The unique identifier for the instance. By default, this is set to a generated UUID.
@@ -45,7 +45,7 @@ struct Habit: Identifiable {
                 /// print(dict);
                 dict.forEach { (key: String, value: Any) in
                     if let nestedDict = value as? [String:Any] {
-                        //    nestedDict["morning"] = true
+                    //    nestedDict["morning"] = true
                         self.schedule[key]?.fromDict(dict: nestedDict)
                     }
                 }
@@ -53,14 +53,18 @@ struct Habit: Identifiable {
         }catch{}
     }
     mutating func scheduleFromJson(json: [String:Any]){
-        let dict = json
-        /// print(dict);
-        dict.forEach { (key: String, value: Any) in
-            if let nestedDict = value as? [String:Any] {
-                //    nestedDict["morning"] = true
-                self.schedule[key]?.fromDict(dict: nestedDict)
-            }
-        }
+        
+            let dict = json
+          
+                /// print(dict);
+                dict.forEach { (key: String, value: Any) in
+                    if let nestedDict = value as? [String:Any] {
+                    //    nestedDict["morning"] = true
+                        self.schedule[key]?.fromDict(dict: nestedDict)
+                    }
+                }
+            
+       
     }
     func scheduleToJson() -> Data {
         var json = Data.init()
@@ -69,7 +73,7 @@ struct Habit: Identifiable {
             let jsonData = try jsonEncoder.encode(self.schedule)
             /// let jsonString = String(data: jsonData, encoding: .utf8)
             json = jsonData
-            /// print("jsontest01 schedule: ", jsonString!)
+           /// print("jsontest01 schedule: ", jsonString!)
         }catch{}
         return json
     }
@@ -86,6 +90,7 @@ struct Habit: Identifiable {
         guard let schedule = entity.schedule else {
             print("error reading schedule of ", identifier.uuidString )
             return nil }
+
         
         let checkable = entity.checkable
         self.id = entity.identifier!
@@ -99,7 +104,7 @@ struct Habit: Identifiable {
         }
         do {
             if let jsonData  =  try JSONSerialization.jsonObject(with: schedule as! Data, options: []) as? [String:AnyObject]{
-                scheduleFromJson(json: jsonData )
+           scheduleFromJson(json: jsonData )
             }
         } catch{
             print("error")
@@ -119,7 +124,7 @@ struct Habit: Identifiable {
         entity.descript = description
         entity.checkable = checkable
         entity.schedule =  NSData.init(data: self.scheduleToJson())
-        
+
         return entity
     }
     
